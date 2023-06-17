@@ -414,8 +414,19 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h4 id="注："><a href="#注：" class="headerlink" title="注："></a><font color='red'>注：</font></h4><p><mark>前面有学习过C语言，Java和C的语法比较相似，主要是对一些细节上的不同进行学习。</mark><br><br>Java是面向对象的高级编程语言,是sun公司的詹姆斯.高斯林1995推出的，2009年被oracle收购，<font color='blue'>很重要的特性：可移植性（JVM在不同的操作系统上发挥作用）</font><br><img src="https://gitee.com/lahahah/pic/raw/master/pic/1.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/lahahah/pic/raw/master/pic/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="我的头像"></p>
-
+        <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h4 id="注："><a href="#注：" class="headerlink" title="注："></a><font color='red'>注：</font></h4><p><mark>前面有学习过C语言，Java和C的语法比较相似，主要是对一些细节上的不同进行学习。</mark><br></p>
+<h2 id="一、认识Java"><a href="#一、认识Java" class="headerlink" title="一、认识Java"></a>一、认识Java</h2><p>Java是面向对象的高级编程语言,是sun公司的詹姆斯.高斯林1995推出的，2009年被oracle收购，<font color='blue'>很重要的特性：可移植性（JVM在不同的操作系统上发挥作用）。</font></p>
+<h3 id="1-Java程序的实现"><a href="#1-Java程序的实现" class="headerlink" title="1.Java程序的实现"></a><em>1.Java程序的实现</em></h3><h4 id="1-类"><a href="#1-类" class="headerlink" title="(1)类"></a><font color='brown'>(1)类</font></h4><h5 id="Java中的程序是以类为单位，所有的程序都必须在class定义范畴之内，可是对于类的定义有两种形式："><a href="#Java中的程序是以类为单位，所有的程序都必须在class定义范畴之内，可是对于类的定义有两种形式：" class="headerlink" title="Java中的程序是以类为单位，所有的程序都必须在class定义范畴之内，可是对于类的定义有两种形式："></a>Java中的程序是以类为单位，所有的程序都必须在class定义范畴之内，可是对于类的定义有两种形式：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 类名称&#123;              public class 类名称&#123;</span><br><span class="line">    代码                        代码</span><br><span class="line">&#125;                           &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>public class定义要求文件名称必须与类名称保持一致，<font color='pink'>而在*.java文件中只允许有一个public class定义。</font></li>
+<li>class定义的类，文件名称可以与类名称不同，但是在编译后每一个使用class声明的类都会生成*.class文件，也就是说Java文件可以产生多个class文件。</li>
+</ul>
+<h4 id="2-主方法"><a href="#2-主方法" class="headerlink" title="(2)主方法"></a><font color='brown'>(2)主方法</font></h4><blockquote>
+<p>主方法(main())是一切程序的起点，所有的程序代码都是从主方法开始执行，Java中的主方法定义如下：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    执行的代码；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><font style="background: skyblue">一般将主方法所在的类称为主类，并且主类都是用public class声明。</font></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a><em>2.</em></h3>
       </div>
       <div class="post-tags-categories">
         
@@ -681,7 +692,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-text">Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-text">注：</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-text">Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-text">注：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A4%E8%AF%86Java"><span class="toc-text">一、认识Java</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.Java程序的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%B1%BB"><span class="toc-text">(1)类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Java%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%98%AF%E4%BB%A5%E7%B1%BB%E4%B8%BA%E5%8D%95%E4%BD%8D%EF%BC%8C%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%83%BD%E5%BF%85%E9%A1%BB%E5%9C%A8class%E5%AE%9A%E4%B9%89%E8%8C%83%E7%95%B4%E4%B9%8B%E5%86%85%EF%BC%8C%E5%8F%AF%E6%98%AF%E5%AF%B9%E4%BA%8E%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E6%9C%89%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F%EF%BC%9A"><span class="toc-text">Java中的程序是以类为单位，所有的程序都必须在class定义范畴之内，可是对于类的定义有两种形式：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%BB%E6%96%B9%E6%B3%95"><span class="toc-text">(2)主方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-text">2.</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
