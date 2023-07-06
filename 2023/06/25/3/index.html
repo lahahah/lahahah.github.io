@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows) | Hexo</title>
+  <title>Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -376,21 +376,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-e22aaad20d20634f506f57fff0fcbc17_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows)
+        
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-05-31 |
+          <i class="fas fa-calendar"></i> Published in：2023-06-25 |
         </span>
       
 
@@ -414,103 +414,17 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><!-- Markdwon编辑器支持HTML语言的渲染 
-<div >
-    <img src="https://img0.baidu.com/it/u=697903734,1544489081&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" class="lazyload placeholder" data-srcset="https://img0.baidu.com/it/u=697903734,1544489081&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" width=50 height=50> 
-</div>
--->
-<h3 id="注："><a href="#注：" class="headerlink" title="注："></a><font color='red'>注：</font></h3><ol>
-<li><mark>文件_𝒸𝑜𝓃𝒻𝒾𝑔.𝓎𝓂𝓁非常重要！ </mark></li>
-<li>在安装操作过程中，出现无法处理的错误可以将建立的博客文件夹删除。</li>
-<li>常用命令：<ul>
-<li>hexo init  #初始化博客</li>
-<li>hexo new 文章名称  #创建文章(简写：hexo n)</li>
-<li>hexo clean #清理</li>
-<li>hexo generate  #生成(简写:hexo g)</li>
-<li>hexo server #启动本地博客服务(简写：hexo s)</li>
-<li>hexo deploy #部署(简写：hexo d)</li>
-</ul>
-</li>
-</ol>
-<h2 id="一、安装前准备"><a href="#一、安装前准备" class="headerlink" title="一、安装前准备"></a>一、安装前准备</h2><ol>
-<li>Node.js (版本建议Node.js12.0及以上)<br>【包括两个组件：Node.js 和 npm包管理器】</li>
-<li>Git</li>
-</ol>
-<hr>
-<h2 id="二、本地启动"><a href="#二、本地启动" class="headerlink" title="二、本地启动"></a>二、本地启动</h2><ul>
-<li><p><strong>1.打开cmd命令行</strong> <br></p>
-<blockquote>
-<p>查看Node.js和npm的版本：<br></p>
+        <h1 id="Sting-类"><a href="#Sting-类" class="headerlink" title="Sting 类"></a>Sting 类</h1><blockquote>
+<p>String可以采用<mark>直接赋值 和 使用标准的new调用构造方法</mark>完成实例化。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>2.安装Hexo博客框架</strong> <br></p>
+<h4 id="String对象的比较"><a href="#String对象的比较" class="headerlink" title="String对象的比较"></a>String对象的比较</h4><p><mark>对于基本数据类型(int等),可以通过“&#x3D;&#x3D;”进行内容的比较。</mark></p>
+<p><font color='blue'>常用面试题分析：解释String类中“&#x3D;&#x3D;”和equals()方法比较的区别。</font><br></p>
 <blockquote>
-<p>由于国内利用npm安装会比较慢，所以需要使用cnpm来安装淘宝的镜像源。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	#安装淘宝的cnpm 管理器</span><br><span class="line">cnpm -v	#查看cnpm版本</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli    #安装hexo框架</span><br><span class="line">hexo -v	#查看hexo版本</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>3.使用Hexo搭建博客</strong> <br></p>
-<blockquote>
-<p>首先创建一个存放博客的文件夹，并进入到文件夹内。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 	#生成博客,初始化博客</span><br></pre></td></tr></table></figure>
-<p><mark>  报错，需要安装git </mark></p>
-<blockquote>
-<p>可以去博客目录下，查看生成的博客的基础框架内容。使用<mark>hexo s</mark>命令启动服务器。</p>
-</blockquote>
-<div >
-<!-- 图片上传到github上了，链接需要将blob改为raw，即可显示图片 -->
-<img src="https://github.com/lahahah/hexo_img/raw/main/1.jpg" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></img>
-
-<blockquote>
-<p>将链接复制到浏览器上即可访问博客内容。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="三、远端访问部署-Github"><a href="#三、远端访问部署-Github" class="headerlink" title="三、远端访问部署(Github)"></a>三、远端访问部署(Github)</h2><ul>
-<li><p><strong>1.在github下创建新的仓库。</strong> <br><br><mark>用户部署个人博客的Github仓库命名必须符合：”Github账号的昵称.github.io”</mark></p>
-</li>
-<li><p><strong>2.回到命令行下部署插件</strong> <br></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure></li>
-<li><p><strong><font color='red'>3.配置_config.yml</font></strong> <br>   </p>
-<blockquote>
-<p>在博客安装目录下打开编辑_config.yml，到文件最底部，进行配置。<br><img src="https://github.com/lahahah/hexo_img/raw/main/2.jpg" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/2.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"/><br>repo的网址是在Github上创建的仓库形成的地址，直接复制过来就好。</p>
-</blockquote>
-<p><mark>注意：这里的冒号后有空格，单词也要注意不要拼写错误！！</mark></p>
-</li>
-<li><p><strong>4.博客部署到Github上</strong> <br></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #部署到远程Github仓库</span><br></pre></td></tr></table></figure>
-<p><font color='blue'>这里出错：”fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/%E2%80%A6/.git%E2%80%98">https://github.com/…/.git‘</a>: Could not resolve host: github.com”</font><br><br>   <font color='pink'> 解决方案：</p>
 <ol>
-<li>git config –global user.email “xxx” <br></li>
-<li>git config –global user.name “你的github的名称”</li>
+<li>“&#x3D;&#x3D;”是Java提供的关系运算符，主要功能是进行数值相等判断的，如果用在了String对象上表示的是<mark>内存地址数值</mark>的比较。</li>
+<li>equals()方法是由String提供的一个方法，此方法专门负责进行字符串<mark>内容</mark>的比较。</li>
 </ol>
-</font>
-
-<blockquote>
-<p>通过复制【创建的仓库的名称】在浏览器上打开博客。</p>
 </blockquote>
-<h2 id="四、修改博客主题"><a href="#四、修改博客主题" class="headerlink" title="四、修改博客主题"></a>四、修改博客主题</h2><p>只需要把主题下载到themes目录下，然后在站点配置文件_config.yml中切换主题即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #下载yilia主题到本地</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>再去站点配置文件_config.yml中，在 theme: 后写上主题文件夹的名字。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d  #部署到github上去</span><br></pre></td></tr></table></figure><br> 输入地址，即可访问博客内容。</p>
-</blockquote>
-<h2 id="五、报错及解决方案"><a href="#五、报错及解决方案" class="headerlink" title="五、报错及解决方案"></a>五、报错及解决方案</h2><h4 id="1-部署到github上的"><a href="#1-部署到github上的" class="headerlink" title="1. 部署到github上的"></a>1. 部署到github上的</h4><blockquote>
-<p> Failed to connect to github.com port 443 after ***** ms: Couldn‘t connect to server</p>
-</blockquote>
-<p>分析： 这是由于本机系统代理端口和git端口不一致导致的。<br><br>解决办法：<br><br>1、查看自己本机系统代理：</p>
-<blockquote>
-<p>设置—网络和Internet—代理—地址:端口</p>
-</blockquote>
-</li>
-</ul>
-<p>   <img src="https://github.com/lahahah/hexo_img/raw/main/22.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/22.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></img></p>
-<pre><code>2、修改git配置：（其中的33210改为你电脑的端口号）
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:10809</span><br><span class="line">git config --global https.proxy http://127.0.0.1:10809</span><br></pre></td></tr></table></figure>
-3、再次执行部署到github的命令就行。
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-</code></pre>
 
       </div>
       <div class="post-tags-categories">
@@ -524,7 +438,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2023/05/31/My-New-Post/" target="_blank" title="利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows)">http://example.com/2023/05/31/My-New-Post/</a>
+    <a href="/2023/06/25/3/" target="_blank" title="">http://example.com/2023/06/25/3/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -542,26 +456,25 @@
 
 
 
+
+
   
-  <div class="post-nav-prev post-nav-item">
+  <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/06/13/2/" class="post-nav-link">
       <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
+        Next: <i class="fas fa-angle-right"></i>
         <div class="title-text">从C入门Java(Java基础)</div>
       </div>
-      
       <!-- <div class="content">
         Java基础注：前面有学习过C语言，Java和C的语法比较相似，主要是对一些细节上的不同进行学习。
 一、认识JavaJa
       </div> -->
     </a>
   </div>
-
-
 
 </div>
 
@@ -755,7 +668,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-text">注：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">一、安装前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8"><span class="toc-text">二、本地启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E9%83%A8%E7%BD%B2-Github"><span class="toc-text">三、远端访问部署(Github)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">四、修改博客主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">五、报错及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E7%9A%84"><span class="toc-text">1. 部署到github上的</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Sting-%E7%B1%BB"><span class="toc-text">Sting 类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#String%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">String对象的比较</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
