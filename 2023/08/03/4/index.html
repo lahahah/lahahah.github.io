@@ -367,7 +367,10 @@
       <div class="post-content">
         <h4 id="1-x3D-x3D-和-equals-比较的区别。"><a href="#1-x3D-x3D-和-equals-比较的区别。" class="headerlink" title="1.&#x3D;&#x3D; 和 equals 比较的区别。"></a>1.&#x3D;&#x3D; 和 equals 比较的区别。</h4><p>(1). “&#x3D;&#x3D;”是比较运算符；<br>“equals”是Object类中的方法。</p>
 <p>(2).”&#x3D;&#x3D;”可以比较两个基本数据类型的变量是否相等，比较的是基本数据类型的值是否相等；<br>也可以比较两个引用数据类型的变量是否相等，就是比较引用数据类型所指向的对象的地址是否相等。</p>
-<p>(3).”equals”不能比较两个基本数据类型的变量是否相等，但它可以比较两个引用数据类型的变量是否相等(<mark>默认情况下比较的是引用数据类型变量所指向的对象的地址是否相等</mark>);<br>“equals”方法被重写之后，比较的是引用数据类型变量所指向的内容是否相等。<br><mark>String类和Date类就术语”equals”方法被重写的情况。</mark></p>
+<p>(3).”equals”不能比较两个基本数据类型的变量是否相等，但它可以比较两个引用数据类型的变量是否相等(<mark>默认情况下比较的是引用数据类型变量所指向的对象的地址是否相等</mark>);<br>“equals”方法被重写之后，比较的是引用数据类型变量所指向的内容是否相等。</p>
+<table><tr><td bgcolor="Darkorange">String类和Date类就属于"equals"方法被重写的情况。</td></tr></table>
+
+
 <h4 id="2-final关键字的作用。"><a href="#2-final关键字的作用。" class="headerlink" title="2.final关键字的作用。"></a>2.final关键字的作用。</h4><blockquote>
 <p>final可以用来修饰的结构：类、方法、变量。</p>
 </blockquote>
@@ -381,7 +384,7 @@
 <li><p>final关键字修饰一个变量的时候：<br>被final修饰的变量必须要初始化，赋值后不能再重新赋值。<br>如果修饰的变量是基本数据类型，值不能改变<br>如果修饰的成员变量是引用数据类型，表示引用地址不能改变，但是引用所指向的对象的里面的内容还是可以改变的</p>
 </li>
 </ol>
-
+<h4 id="3-为什么重写equals-还要重写-hashcode？"><a href="#3-为什么重写equals-还要重写-hashcode？" class="headerlink" title="3.为什么重写equals 还要重写 hashcode？"></a>3.为什么重写equals 还要重写 hashcode？</h4>
       </div>
       <div class="post-tags-categories">
         
@@ -416,17 +419,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/08/13/5/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">在Idea中使用Unit 5 单元测试</div>
+        <div class="title-text">在Idea中使用JUnit 5 单元测试</div>
       </div>
       
       <!-- <div class="content">
         若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。
-在java工程中新加你一个类，
+在java工程中新加一个类，在
       </div> -->
     </a>
   </div>
@@ -445,11 +448,9 @@
         <div class="title-text">面向对象</div>
       </div>
       <!-- <div class="content">
-        面向对象的三大特征：封装、继承、多态
+        面向对象的三大特征：封装、继承、多态类的五大成分：成员变量、构造器、方法、代码块、内部类
 面向对象
-把现实世界中的事物全部看出一个一个的对象来解决问题的。(万物皆对象)
-
-
+把现实世界中的事物全
       </div> -->
     </a>
   </div>
@@ -563,7 +564,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-x3D-x3D-%E5%92%8C-equals-%E6%AF%94%E8%BE%83%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">1.&#x3D;&#x3D; 和 equals 比较的区别。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-final%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">2.final关键字的作用。</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-x3D-x3D-%E5%92%8C-equals-%E6%AF%94%E8%BE%83%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">1.&#x3D;&#x3D; 和 equals 比较的区别。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-final%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">2.final关键字的作用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99equals-%E8%BF%98%E8%A6%81%E9%87%8D%E5%86%99-hashcode%EF%BC%9F"><span class="toc-text">3.为什么重写equals 还要重写 hashcode？</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -598,7 +599,7 @@
             <div class="post-img-box">
               <a href="/2023/08/13/5/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -607,7 +608,7 @@
                   <span class="post-date">08-13</span>
                 
               </div>
-              <a class="post-title" href="/2023/08/13/5/">在Idea中使用Unit 5 单元测试</a>
+              <a class="post-title" href="/2023/08/13/5/">在Idea中使用JUnit 5 单元测试</a>
             </div>
           </div>
         
