@@ -384,7 +384,9 @@
 <li><p>final关键字修饰一个变量的时候：<br>被final修饰的变量必须要初始化，赋值后不能再重新赋值。<br>如果修饰的变量是基本数据类型，值不能改变<br>如果修饰的成员变量是引用数据类型，表示引用地址不能改变，但是引用所指向的对象的里面的内容还是可以改变的</p>
 </li>
 </ol>
-<h4 id="3-为什么重写equals-还要重写-hashcode？"><a href="#3-为什么重写equals-还要重写-hashcode？" class="headerlink" title="3.为什么重写equals 还要重写 hashcode？"></a>3.为什么重写equals 还要重写 hashcode？</h4>
+<h4 id="3-为什么重写equals-还要重写-hashcode？"><a href="#3-为什么重写equals-还要重写-hashcode？" class="headerlink" title="3.为什么重写equals 还要重写 hashcode？"></a>3.为什么重写equals 还要重写 hashcode？</h4><p><mark>注：集合是一种容器用来装数据的，类似数组。</mark><br>(1). Object 的 equals() 默认比较的是对象的内存地址，而hashCode() 也是对对象的内存地址进行hash，返回对象自己的哈希值。<br>(2).因为Hash 比 equals 方法的开销小，速度更快，所以在涉及到hashCode的容器（比如HashSet集合），判断自己是否持有该对象时，会先检查hashCode 是否相等，如果hashCode 不相等，就会直接认为不重复，并存入容器中，不会再调用equals 进行比较。<br>(3).如果hashCode 相等，则代表数组中已经存在对象，还需要通过equals 方法来检测这条链表上的元素是否有一样的，匹配一样，则不添加，否则需要在该数据的下方挂载该对象，形成链表，当链表个数达到8个及以上 且 数组大小满足64，则链表要变成红黑树形式。<br>因此，即使该对象已经存入HashSet 中，但是因为hashCode 不同，会被认为不是同一个对象，还会再次被存入，所以要重新hashCode，以保证：如果equals判断相等，那么hashCode 值也要相等。</p>
+<table><tr><td bgcolor="LightBlue">
+如果两个对象的equals方法返回true，它们的哈希值必须相同；反之，如果哈希值相同，对象的equals方法不一定相等。因此，为了保持一致性，当我们重写equals方法时，也需要同时重写hashCode方法，确保相等的对象具有相同的哈希值，避免在哈希表中出现错误的行为。</td></tr></table>
       </div>
       <div class="post-tags-categories">
         
