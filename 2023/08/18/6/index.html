@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>在Idea中使用JUnit 5 单元测试 | Hexo</title>
+  <title>内部类 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -327,21 +327,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        在Idea中使用JUnit 5 单元测试
+        内部类
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-08-13 |
+          <i class="fas fa-calendar"></i> Published in：2023-08-18 |
         </span>
       
 
@@ -365,25 +365,35 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h4 id="若直接使用-Test报错，没有配置JUnit-包，则可以通过下面的方式利用idea下载。"><a href="#若直接使用-Test报错，没有配置JUnit-包，则可以通过下面的方式利用idea下载。" class="headerlink" title="若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。"></a>若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。</h4><ol>
-<li><p>在java工程中新加一个类，在里面编写一些测试方法。</p>
-<img src=https://github.com/lahahah/hexo_img/raw/main/3.png/>
-</li>
-<li><p>在类名(Test1)上点击右键，选择Genreate，</p>
-<img src=https://github.com/lahahah/hexo_img/raw/main/4.png/>
-生成测试类。
-</li>
-<li><p>勾选需要生成测试的方法,</p>
-<img src=https://github.com/lahahah/hexo_img/raw/main/5.png/>
-点击Ok后创建的文件中会爆红,在爆红处按住alt+enter,选择下载junit5的jar包。
-提示下载，下载完成后程序正常：
-<img src=https://github.com/lahahah/hexo_img/raw/main/6.png/>
-</li>
-<li><p>下载完成后，会生成一个该类的测试类，<br> 由于默认生成的都是如下代码，看着很不美观，因此，可将前方的org.junit.jupiter.api.删掉然后再导包即可：<br> 修改前：</p>
-<img src=https://github.com/lahahah/hexo_img/raw/main/7.png/>
-修改后：
-<img src=https://github.com/lahahah/hexo_img/raw/main/8.png/></li>
+        <h4 id="一、内部类的介绍"><a href="#一、内部类的介绍" class="headerlink" title="一、内部类的介绍"></a>一、内部类的介绍</h4><p>一个类的内部又完整的嵌套了另一个类结构。被嵌套的类称为内部类(inner class)，嵌套其他类的类称为外部类(outer class)。<br><mark>特点：可以直接访问私有属性，并且可以体现类与类之间的包含关系。</mark></p>
+<h4 id="二、内部类的分类"><a href="#二、内部类的分类" class="headerlink" title="二、内部类的分类"></a>二、内部类的分类</h4><blockquote>
+<p>定义在外部类局部位置上(如方法、代码块内)：</p>
+</blockquote>
+<ol>
+<li>局部内部类(有类名)</li>
+<li>匿名内部类<mark>[重点]</mark></li>
 </ol>
+<blockquote>
+<p>定义在外部类的成员位置上：</p>
+</blockquote>
+<ol>
+<li>成员内部类</li>
+<li>静态内部类(使用static修饰)</li>
+</ol>
+<h5 id="1-局部内部类"><a href="#1-局部内部类" class="headerlink" title="1).局部内部类"></a>1).局部内部类</h5><p><font color="red">相当于局部变量，所以不能添加访问修饰符，但可以使用final修饰。</font><br><mark><br>(1).定义在方法&#x2F;代码块中。<br>(2).作用域在方法体或代码中。<br>(3).本质仍是一个类。<br></mark></p>
+<table><tr><td bgcolor="Darkorange">如果 外部类 和 局部内部类 的成员重名时，默认遵循就近原则；若要访问外部类的成员，则可以使用 (外部类名.this.成员)访问。</td></tr></table>
+
+<h5 id="2-匿名内部类"><a href="#2-匿名内部类" class="headerlink" title="2).匿名内部类"></a>2).匿名内部类</h5><p><font color="red">就是一种特殊的 局部内部类；所谓匿名，指程序员不需要为这个类声明名字。</font><br><mark>匿名内部类的最终核心目的是简化代码。</mark></p>
+<table><tr><td bgcolor="LightBlue">
+如果 外部类 和 匿名内部类 的成员重名时，匿名内部类访问的话，默认遵循就近原则,如果想访问外部类的成员，则可以使用(外部类名.this.成员)去访问。</td></tr></table>
+
+<h5 id="3-成员内部类"><a href="#3-成员内部类" class="headerlink" title="3).成员内部类"></a>3).成员内部类</h5><p><font color="red">可以添加任意访问修饰符(public、protected、默认、private),因为它的地位就是一个成员。</font></p>
+<table><tr><td bgcolor="LightYellow">
+如果 外部类 和 内部类 的成员重名时，内部类访问的话，默认遵循就近原则，如果想访问外部类的成员，则可以使用(外部类名.this.成员)去访问。</td></tr></table>
+
+<h5 id="4-静态内部类"><a href="#4-静态内部类" class="headerlink" title="4).静态内部类"></a>4).静态内部类</h5><p><font color="red">可以直接访问外部类的所有静态成员，包含私有的，但不能直接访问非静态成员</font></p>
+<table><tr><td bgcolor="LightPink">
+如果 外部类 和 静态内部类 的成员重名时，静态内部类访问的时，默认遵循就近原则，如果想访问外部类的成员，则可以使用(外部类名.成员)去访问。</td></tr></table>
 
       </div>
       <div class="post-tags-categories">
@@ -397,7 +407,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2023/08/13/5/" target="_blank" title="在Idea中使用JUnit 5 单元测试">http://example.com/2023/08/13/5/</a>
+    <a href="/2023/08/18/6/" target="_blank" title="内部类">http://example.com/2023/08/18/6/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -415,39 +425,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/08/18/6/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">内部类</div>
-      </div>
-      
-      <!-- <div class="content">
-        一、内部类的介绍一个类的内部又完整的嵌套了另一个类结构。被嵌套的类称为内部类(inner class)，嵌套其他类的类称
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/08/03/4/" class="post-nav-link">
+    <a href="/2023/08/13/5/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">经典面试题</div>
+        <div class="title-text">在Idea中使用JUnit 5 单元测试</div>
       </div>
       <!-- <div class="content">
-        1.&#x3D;&#x3D; 和 equals 比较的区别。(1). “&#x3D;&#x3D;”是比较运算符；“equ
+        若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。
+在java工程中新加一个类，在
       </div> -->
     </a>
   </div>
@@ -561,7 +554,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8B%A5%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-Test%E6%8A%A5%E9%94%99%EF%BC%8C%E6%B2%A1%E6%9C%89%E9%85%8D%E7%BD%AEJUnit-%E5%8C%85%EF%BC%8C%E5%88%99%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F%E5%88%A9%E7%94%A8idea%E4%B8%8B%E8%BD%BD%E3%80%82"><span class="toc-text">若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、内部类的介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">二、内部类的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">1).局部内部类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">2).匿名内部类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">3).成员内部类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">4).静态内部类</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
