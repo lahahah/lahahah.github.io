@@ -387,6 +387,37 @@
 <h4 id="3-为什么重写equals-还要重写-hashcode？"><a href="#3-为什么重写equals-还要重写-hashcode？" class="headerlink" title="3.为什么重写equals 还要重写 hashcode？"></a>3.为什么重写equals 还要重写 hashcode？</h4><p><mark>注：集合是一种容器用来装数据的，类似数组。</mark><br>(1). Object 的 equals() 默认比较的是对象的内存地址，而hashCode() 也是对对象的内存地址进行hash，返回对象自己的哈希值。<br>(2).因为Hash 比 equals 方法的开销小，速度更快，所以在涉及到hashCode的容器（比如HashSet集合），判断自己是否持有该对象时，会先检查hashCode 是否相等，如果hashCode 不相等，就会直接认为不重复，并存入容器中，不会再调用equals 进行比较。<br>(3).如果hashCode 相等，则代表数组中已经存在对象，还需要通过equals 方法来检测这条链表上的元素是否有一样的，匹配一样，则不添加，否则需要在该数据的下方挂载该对象，形成链表，当链表个数达到8个及以上 且 数组大小满足64，则链表要变成红黑树形式。<br>因此，即使该对象已经存入HashSet 中，但是因为hashCode 不同，会被认为不是同一个对象，还会再次被存入，所以要重新hashCode，以保证：如果equals判断相等，那么hashCode 值也要相等。</p>
 <table><tr><td bgcolor="LightBlue">
 如果两个对象的equals方法返回true，它们的哈希值必须相同；反之，如果哈希值相同，对象的equals方法不一定相等。因此，为了保持一致性，当我们重写equals方法时，也需要同时重写hashCode方法，确保相等的对象具有相同的哈希值，避免在哈希表中出现错误的行为。</td></tr></table>
+
+<h4 id="4-为啥有时会出现4-0-3-6-x3D-0-40000001-这种现象？"><a href="#4-为啥有时会出现4-0-3-6-x3D-0-40000001-这种现象？" class="headerlink" title="4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？"></a>4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？</h4><p>因为数字在计算机中是以二进制的形式进行存储的，2进制的小数无法精确的表达10进制小数，计算机在计算10进制小数的过程中要先转换为2进制进行计算，这个过程中出现了误差。所以进行这样的计算应该使用BigDecimal类，才能准确地得到想要的数值。</p>
+<h4 id="5-介绍Java的集合类"><a href="#5-介绍Java的集合类" class="headerlink" title="5.介绍Java的集合类"></a>5.介绍Java的集合类</h4><p>Java集合框架分为Collection(单列集合)集合 和 Map(双列集合)集合。</p>
+<h5 id="Collection集合主要有List-和-Set-两大接口"><a href="#Collection集合主要有List-和-Set-两大接口" class="headerlink" title="Collection集合主要有List 和 Set 两大接口"></a>Collection集合主要有List 和 Set 两大接口</h5><blockquote>
+<p>List:有序、可重复、有索引</p>
+</blockquote>
+<ol>
+<li>ArrayList:基于数组实现，线程不安全[常用]</li>
+<li>Vector:基于数组实现，线程安全</li>
+<li>LinkedList:基于双链表实现，线程不安全</li>
+</ol>
+<blockquote>
+<p>Set:无序、不重复、无索引</p>
+</blockquote>
+<p><mark>哈希表&#x3D;数组+链表+红黑树</mark></p>
+<ol>
+<li>HashSet:哈希表结构<br>实现子类：LinkedHashSet:<mark>有序</mark>、不重复、无索引</li>
+<li>TreeSet:<mark>按大小默认升序排列</mark>、不重复、无索引</li>
+</ol>
+<h5 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h5><ol>
+<li>HashMap:哈希表结构、线程不安全<br>实现子类：LinedHashMap</li>
+<li>HashTable:哈希表结构，线程安全<br>实现子类：Properties</li>
+<li>TreepMap:红黑树结构</li>
+</ol>
+<h4 id="6-ArrayList-和-LinkedList-的区别。"><a href="#6-ArrayList-和-LinkedList-的区别。" class="headerlink" title="6.ArrayList 和 LinkedList 的区别。"></a>6.ArrayList 和 LinkedList 的区别。</h4><ol>
+<li>ArrayList的实现是基于数组，LinkedList的实现是基于双向链表。</li>
+<li>对于随机访问，ArrayList优于LinkedList。</li>
+<li>对于插入和删除操作，LinkedList优于ArrayList。</li>
+<li>LinkedList比ArrayList更占内存，因为LinkedList的节点除了存储数据，还存储了两个引用，一个指向前一个元素，一个指向后一个元素。</li>
+</ol>
+
       </div>
       <div class="post-tags-categories">
         
@@ -566,7 +597,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-x3D-x3D-%E5%92%8C-equals-%E6%AF%94%E8%BE%83%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">1.&#x3D;&#x3D; 和 equals 比较的区别。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-final%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">2.final关键字的作用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99equals-%E8%BF%98%E8%A6%81%E9%87%8D%E5%86%99-hashcode%EF%BC%9F"><span class="toc-text">3.为什么重写equals 还要重写 hashcode？</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-x3D-x3D-%E5%92%8C-equals-%E6%AF%94%E8%BE%83%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">1.&#x3D;&#x3D; 和 equals 比较的区别。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-final%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">2.final关键字的作用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99equals-%E8%BF%98%E8%A6%81%E9%87%8D%E5%86%99-hashcode%EF%BC%9F"><span class="toc-text">3.为什么重写equals 还要重写 hashcode？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%BA%E5%95%A5%E6%9C%89%E6%97%B6%E4%BC%9A%E5%87%BA%E7%8E%B04-0-3-6-x3D-0-40000001-%E8%BF%99%E7%A7%8D%E7%8E%B0%E8%B1%A1%EF%BC%9F"><span class="toc-text">4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BB%8B%E7%BB%8DJava%E7%9A%84%E9%9B%86%E5%90%88%E7%B1%BB"><span class="toc-text">5.介绍Java的集合类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Collection%E9%9B%86%E5%90%88%E4%B8%BB%E8%A6%81%E6%9C%89List-%E5%92%8C-Set-%E4%B8%A4%E5%A4%A7%E6%8E%A5%E5%8F%A3"><span class="toc-text">Collection集合主要有List 和 Set 两大接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Map%E9%9B%86%E5%90%88"><span class="toc-text">Map集合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-ArrayList-%E5%92%8C-LinkedList-%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">6.ArrayList 和 LinkedList 的区别。</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
