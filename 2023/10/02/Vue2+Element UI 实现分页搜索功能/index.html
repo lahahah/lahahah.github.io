@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows) | Hexo</title>
+  <title>Vue2 + Element UI 实现分页搜索功能 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -334,14 +334,14 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows)
+        Vue2 + Element UI 实现分页搜索功能
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-05-31 |
+          <i class="fas fa-calendar"></i> Published in：2023-10-02 |
         </span>
       
 
@@ -365,104 +365,27 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><!-- Markdwon编辑器支持HTML语言的渲染 
-<div >
-    <img src="https://img0.baidu.com/it/u=697903734,1544489081&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" class="lazyload placeholder" data-srcset="https://img0.baidu.com/it/u=697903734,1544489081&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" width=50 height=50> 
-</div>
--->
-<h3 id="注："><a href="#注：" class="headerlink" title="注："></a><font color='red'>注：</font></h3><ol>
-<li><mark>文件_𝒸𝑜𝓃𝒻𝒾𝑔.𝓎𝓂𝓁非常重要！ </mark></li>
-<li>在安装操作过程中，出现无法处理的错误可以将建立的博客文件夹删除。</li>
-<li>常用命令：<ul>
-<li>hexo init  #初始化博客</li>
-<li>hexo new 文章名称  #创建文章(简写：hexo n)</li>
-<li>hexo clean #清理</li>
-<li>hexo generate  #生成(简写:hexo g)</li>
-<li>hexo server #启动本地博客服务(简写：hexo s)</li>
-<li>hexo deploy #部署(简写：hexo d)</li>
-</ul>
-</li>
-</ol>
-<h2 id="一、安装前准备"><a href="#一、安装前准备" class="headerlink" title="一、安装前准备"></a>一、安装前准备</h2><ol>
-<li>Node.js (版本建议Node.js12.0及以上)<br>【包括两个组件：Node.js 和 npm包管理器】</li>
-<li>Git</li>
-</ol>
-<hr>
-<h2 id="二、本地启动"><a href="#二、本地启动" class="headerlink" title="二、本地启动"></a>二、本地启动</h2><ul>
-<li><p><strong>1.打开cmd命令行</strong> <br></p>
+        <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>1.先创建一个 vue 项目 ，要安装 axios ，并引入项目中，来实现表格数据的获取。<br />2.表格的数据可以通过在线的 **_接口调试管理软件 _**，来模拟数据库的数据，进行前端的测试。</p>
 <blockquote>
-<p>查看Node.js和npm的版本：<br></p>
+<p>这里我用到的是在线的 Apifox 工具，可以在里面创建一个新接口</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>2.安装Hexo博客框架</strong> <br></p>
-<blockquote>
-<p>由于国内利用npm安装会比较慢，所以需要使用cnpm来安装淘宝的镜像源。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	#安装淘宝的cnpm 管理器</span><br><span class="line">cnpm -v	#查看cnpm版本</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli    #安装hexo框架</span><br><span class="line">hexo -v	#查看hexo版本</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>3.使用Hexo搭建博客</strong> <br></p>
-<blockquote>
-<p>首先创建一个存放博客的文件夹，并进入到文件夹内。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 	#生成博客,初始化博客</span><br></pre></td></tr></table></figure>
-<p><mark>  报错，需要安装git </mark></p>
-<blockquote>
-<p>可以去博客目录下，查看生成的博客的基础框架内容。使用<mark>hexo s</mark>命令启动服务器。</p>
-</blockquote>
-<div >
-<!-- 图片上传到github上了，链接需要将blob改为raw，即可显示图片 -->
-<img src="https://github.com/lahahah/hexo_img/raw/main/1.jpg" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></img>
+<img src="https://github.com/lahahah/hexo_img/raw/main/41.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/41.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:242px"/>
 
-<blockquote>
-<p>将链接复制到浏览器上即可访问博客内容。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="三、远端访问部署-Github"><a href="#三、远端访问部署-Github" class="headerlink" title="三、远端访问部署(Github)"></a>三、远端访问部署(Github)</h2><ul>
-<li><p><strong>1.在github下创建新的仓库。</strong> <br><br><mark>用户部署个人博客的Github仓库命名必须符合：”Github账号的昵称.github.io”</mark></p>
-</li>
-<li><p><strong>2.回到命令行下部署插件</strong> <br></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure></li>
-<li><p><strong><font color='red'>3.配置_config.yml</font></strong> <br>   </p>
-<blockquote>
-<p>在博客安装目录下打开编辑_config.yml，到文件最底部，进行配置。<br><img src="https://github.com/lahahah/hexo_img/raw/main/2.jpg" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/2.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"/><br>reop的网址是在Github上创建的仓库形成的地址，直接复制过来就好。</p>
-</blockquote>
-<p><mark>注意：这里的冒号后有空格，单词也要注意不要拼写错误！！</mark></p>
-</li>
-<li><p><strong>4.博客部署到Github上</strong> <br></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #部署到远程Github仓库</span><br></pre></td></tr></table></figure>
-<p><font color='blue'>这里出错：”fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/%E2%80%A6/.git%E2%80%98">https://github.com/…/.git‘</a>: Could not resolve host: github.com”</font><br><br>   <font color='pink'> 解决方案：</p>
-<ol>
-<li>git config –global user.email “xxx” <br></li>
-<li>git config –global user.name “你的github的名称”</li>
-</ol>
-</font>
-
-<blockquote>
-<p>通过复制【创建的仓库的名称】在浏览器上打开博客。</p>
-</blockquote>
-<h2 id="四、修改博客主题"><a href="#四、修改博客主题" class="headerlink" title="四、修改博客主题"></a>四、修改博客主题</h2><p>只需要把主题下载到themes目录下，然后在站点配置文件_config.yml中切换主题即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #下载yilia主题到本地</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>再去站点配置文件_config.yml中，在 theme: 后写上主题文件夹的名字。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d  #部署到github上去</span><br></pre></td></tr></table></figure><br> 输入地址，即可访问博客内容。</p>
-</blockquote>
-<h2 id="五、报错及解决方案"><a href="#五、报错及解决方案" class="headerlink" title="五、报错及解决方案"></a>五、报错及解决方案</h2><h4 id="1-部署到github上的"><a href="#1-部署到github上的" class="headerlink" title="1. 部署到github上的"></a>1. 部署到github上的</h4><blockquote>
-<p> Failed to connect to github.com port 443 after ***** ms: Couldn‘t connect to server</p>
-</blockquote>
-<p>分析： 这是由于本机系统代理端口和git端口不一致导致的。<br><br>解决办法：<br><br>1、查看自己本机系统代理：</p>
-<blockquote>
-<p>设置—网络和Internet—代理—地址:端口</p>
-</blockquote>
-</li>
-</ul>
-<p>   <img src="https://github.com/lahahah/hexo_img/raw/main/22.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/22.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></img></p>
-<pre><code>2、修改git配置：（其中的33210改为你电脑的端口号）
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:33210</span><br><span class="line">git config --global https.proxy http://127.0.0.1:33210</span><br></pre></td></tr></table></figure>
-3、再次执行部署到github的命令就行。
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-</code></pre>
-
+<p>在左下角点击 <strong>文档模式</strong><br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/42.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/42.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:334px"/><br><img src="https://github.com/lahahah/hexo_img/raw/main/43.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/43.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:368px"/><br />如果想要生成的文档是自己预期的数据，那么就需要点击 <strong>新建期望</strong><br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/44.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/44.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:669px"/><br />在这个自动生成的数据中 也是可以进行修改的<br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/45.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/45.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:675px"/><br />最后生成的文档，可以点击这个链接，直接赋值后到浏览器粘贴显示查看<br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/46.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/46.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:683px"/></p>
+<h1 id="页面效果展示"><a href="#页面效果展示" class="headerlink" title="页面效果展示"></a>页面效果展示</h1><p>模糊搜索，点击搜索或者按 enter 键可以搜索出结果<br />点击分页显示不同界面<br /><img src="https://github.com/lahahah/hexo_img/raw/main/47.gif" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/47.gif" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:724px"/></p>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p>视图由两部分构成：上面是搜索区，下面是表格展示区。<br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/48.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/48.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:1256px"/><br><a name="OBV4s"></a></p>
+<h4 id="1-先构建页面，利用-Element-UI，进行页面的设计。"><a href="#1-先构建页面，利用-Element-UI，进行页面的设计。" class="headerlink" title="1.先构建页面，利用 Element UI，进行页面的设计。"></a>1.先构建页面，利用 Element UI，进行页面的设计。</h4><p><a name="zug8V"></a></p>
+<h4 id="2-完成具体功能的实现。"><a href="#2-完成具体功能的实现。" class="headerlink" title="2.完成具体功能的实现。"></a>2.完成具体功能的实现。</h4><p><a name="hL9P6"></a></p>
+<h5 id="表格展示区："><a href="#表格展示区：" class="headerlink" title="表格展示区："></a>表格展示区：</h5><p>1）.使用Element 的表格组件 el-table、el-table-column 等构建表格。<br />列表分页显示是使用了 element-ui 中 el-table 和 el-pagination 标签<br />2）.el-table中data是需要在表格中展示的数据。<br />3）.分页条使用的<strong>属性</strong>说明：<br />layout: 组件布局，子组件名用逗号分隔，取值类型为 string。子组件名可以按照需求调换顺序，并用逗号分隔。<br />total: 显示页码总条数。和 page-count 设置任意一个即可达到显示页码的功能。<br />page-sizes: 每页显示个数选择器的选项设置。取值类型为 number 数组。<br />page-size: 每页显示条目数，支持 .sync 修饰符。取值类型为 number，默认值为10。<br />current-page: 当前页数，支持 .sync 修饰符。取值类型为 number，默认值为1。<br />分页<strong>事件</strong>说明：<br />size-change: 侦听 pageSize 的改变。<br />current-change: 侦听 currentPage 的改变。<br /><br><img src="https://github.com/lahahah/hexo_img/raw/main/49.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/49.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:564px"/><br><a name="Og1ey"></a></p>
+<h3 id="核心的实现代码"><a href="#核心的实现代码" class="headerlink" title="核心的实现代码"></a>核心的实现代码</h3><img src="https://github.com/lahahah/hexo_img/raw/main/50.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/50.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:616px"/>
+<img src="https://github.com/lahahah/hexo_img/raw/main/51.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/51.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:613px"/>
+<br />currentChangePage : 是用来展示每次切换时当前页面数据及条数。<br />搜索区的方法：<br /><img src="https://github.com/lahahah/hexo_img/raw/main/52.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/52.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:472px"/><br />searchput:  点击 搜索 ，或是按 enter 键 
+<img src="https://github.com/lahahah/hexo_img/raw/main/53.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/53.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:159px"/>，都表示要搜索信息，表格中仅显示满足条件的数据。
+<a name="nXZuH"></a>
+# 完整代码展示：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;!-- 设计搜索区 --&gt;</span><br><span class="line">      &lt;el-row&gt;</span><br><span class="line">        &lt;!-- 是Element UI布局中的核心组件，他的作用的将一行分成24个网格 --&gt;</span><br><span class="line">        &lt;el-col :span=&quot;6&quot;&gt;</span><br><span class="line">          &lt;!-- 有个input输入框，后面有搜索按钮，但是正常会习惯性的按回车键（enter键）进行搜索 --&gt;</span><br><span class="line">          &lt;el-input v-model=&quot;inputContent&quot; class=&quot;searchinput&quot; placeholder=&quot;输入姓名搜索&quot; @change=&quot;searchput&quot; clearable&gt;</span><br><span class="line">          &lt;/el-input&gt;</span><br><span class="line">        &lt;/el-col&gt;</span><br><span class="line">        &lt;el-col :span=&quot;2&quot;&gt;</span><br><span class="line">          &lt;el-button @click=&quot;searchput&quot; type=&quot;success&quot;&gt;搜索&lt;/el-button&gt;</span><br><span class="line">        &lt;/el-col&gt;</span><br><span class="line">      &lt;/el-row&gt;</span><br><span class="line"></span><br><span class="line">      &lt;!-- 设计表格展示区 --&gt;</span><br><span class="line">      &lt;el-table stripe :data=&quot;tempData&quot; style=&quot;width: 100%&quot;&gt;</span><br><span class="line">        &lt;el-table-column prop=&quot;name&quot; label=&quot;姓名&quot; width=&quot;400&quot;&gt;</span><br><span class="line">        &lt;/el-table-column&gt;</span><br><span class="line">        &lt;el-table-column prop=&quot;age&quot; label=&quot;年龄&quot; width=&quot;400&quot;&gt;</span><br><span class="line">        &lt;/el-table-column&gt;</span><br><span class="line">        &lt;el-table-column prop=&quot;classNo&quot; label=&quot;班级&quot;&gt;</span><br><span class="line">        &lt;/el-table-column&gt;</span><br><span class="line">      &lt;/el-table&gt;</span><br><span class="line">      &lt;br /&gt;</span><br><span class="line">      &lt;!-- 分页条 --&gt;</span><br><span class="line">      &lt;el-pagination background layout=&quot;total,sizes,prev, pager, next,jumper&quot; </span><br><span class="line">        :total=&quot;total&quot;</span><br><span class="line">        @size-change=&quot;handleSizeChange&quot;</span><br><span class="line">        @current-change=&quot;handleCurrentChange&quot; </span><br><span class="line">        :page-sizes=&quot;[1, 2, 5, 10]&quot;</span><br><span class="line">        :page-size=&quot;pageSize&quot; :current-page=&quot;currentPage&quot;&gt;</span><br><span class="line">      &lt;/el-pagination&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import axios from &#x27;axios&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;App&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      tableData: [],  //表格源数据</span><br><span class="line">      tempData: [],   //表格显示数据</span><br><span class="line">      currentPage: 1,  //当前页</span><br><span class="line">      total: 0,   //数据总数</span><br><span class="line">      pageSize: 10,   //一页展示的条数  默认一页展示10条，有很多数据就可以写其他的数</span><br><span class="line">      inputContent: &#x27;&#x27;  //搜索的数据值</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    //每页条数切换</span><br><span class="line">    handleSizeChange(val) &#123;</span><br><span class="line">      console.log(`每页 $&#123;val&#125; 条`);</span><br><span class="line">      this.pageSize = val;</span><br><span class="line">      </span><br><span class="line">     // this.handleCurrentChange(this.currentPage);</span><br><span class="line">      this.handleCurrentChange(1);</span><br><span class="line">    &#125;,</span><br><span class="line">    //页码切换</span><br><span class="line">    handleCurrentChange(val) &#123;</span><br><span class="line">      console.log(`当前页: $&#123;val&#125;`);</span><br><span class="line">      this.currentPage = val;</span><br><span class="line">      this.currentChangePage(this.tableData, val);</span><br><span class="line">    &#125;,</span><br><span class="line">    //分页方法</span><br><span class="line">    currentChangePage(list, currentPage) &#123;</span><br><span class="line"></span><br><span class="line">      let from = (currentPage - 1) * this.pageSize;</span><br><span class="line">      let to = currentPage * this.pageSize;</span><br><span class="line">      this.tempData = [];   //每次要置空</span><br><span class="line">      for (; from &lt; to; from++) &#123;</span><br><span class="line">        if(list[from]!=null)&#123;   //只有当list的内容不为空的时候才插入，不然会显示空行</span><br><span class="line">          this.tempData.push(list[from]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      console.log(this.tempData);</span><br><span class="line">    &#125;,</span><br><span class="line">    searchput() &#123; </span><br><span class="line">      this.tempData = [];   //每次要置空</span><br><span class="line">      this.tempData = this.tableData.filter((item,index) =&gt; &#123;</span><br><span class="line">         return (item.name.includes(this.inputContent))    </span><br><span class="line">      &#125;)</span><br><span class="line">      console.log(this.tempData);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;  //自动加载数据，挂在完成   钩子函数created也可以</span><br><span class="line">    //发送异步请求，获取数据</span><br><span class="line">    axios.get(&quot;https://mock.apifox.cn/m1/3361937-0-default/data/info&quot;)</span><br><span class="line">      .then((result) =&gt; &#123;  //代表成功获取的信息</span><br><span class="line">        this.tableData = result.data;</span><br><span class="line">        this.tempData = result.data;</span><br><span class="line">        this.total = result.data.length;</span><br><span class="line">        // this.pageSize = result.data.length;   //检测显示数据的长度是一页要展示的条数</span><br><span class="line">        this.handleCurrentChange(1);</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<img src="https://github.com/lahahah/hexo_img/raw/main/54.png" class="lazyload placeholder" data-srcset="https://github.com/lahahah/hexo_img/raw/main/54.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width:525px"/>这个链接，是在前面准备工作时，在在线的 Apifox 工具中创建的模拟数据。
       </div>
       <div class="post-tags-categories">
         
@@ -475,7 +398,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2023/05/31/My-New-Post/" target="_blank" title="利用𝑯𝒆𝒙𝒐+𝑮𝒊𝒕𝒉𝒖𝒃搭建属于自己的博客(Windows)">http://example.com/2023/05/31/My-New-Post/</a>
+    <a href="/2023/10/02/Vue2+Element UI 实现分页搜索功能/" target="_blank" title="Vue2 + Element UI 实现分页搜索功能">http://example.com/2023/10/02/Vue2+Element UI 实现分页搜索功能/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -493,26 +416,26 @@
 
 
 
+
+
   
-  <div class="post-nav-prev post-nav-item">
+  <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/06/13/2/" class="post-nav-link">
+    <a href="/2023/10/01/Git%20%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-nav-link">
       <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">从C入门Java(Java基础)</div>
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Git 代码管理工具</div>
       </div>
-      
       <!-- <div class="content">
-        Java基础注：前面有学习过C语言，Java和C的语法比较相似，主要是对一些细节上的不同进行学习。
-一、认识JavaJa
+        
+一、Git介绍Git最初是由Linux开发者Linus用了仅仅两周时间纯C语言编写而成，是一个分布式版本控制系统。
+版
       </div> -->
     </a>
   </div>
-
-
 
 </div>
 
@@ -623,7 +546,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-text">注：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">一、安装前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8"><span class="toc-text">二、本地启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E9%83%A8%E7%BD%B2-Github"><span class="toc-text">三、远端访问部署(Github)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">四、修改博客主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">五、报错及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E7%9A%84"><span class="toc-text">1. 部署到github上的</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-text">页面效果展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%85%88%E6%9E%84%E5%BB%BA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%88%A9%E7%94%A8-Element-UI%EF%BC%8C%E8%BF%9B%E8%A1%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AE%BE%E8%AE%A1%E3%80%82"><span class="toc-text">1.先构建页面，利用 Element UI，进行页面的设计。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%8C%E6%88%90%E5%85%B7%E4%BD%93%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E3%80%82"><span class="toc-text">2.完成具体功能的实现。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B1%95%E7%A4%BA%E5%8C%BA%EF%BC%9A"><span class="toc-text">表格展示区：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">核心的实现代码</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
