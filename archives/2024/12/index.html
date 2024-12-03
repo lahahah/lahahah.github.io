@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>经典面试题 | Hexo</title>
+  <title>archives: 2024/12 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -388,584 +388,106 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
- 
-
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        经典面试题
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-08-03 |
-        </span>
-      
-
-      
-
-      
-    
+        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
+  <div class="archive-header-title">
+    archive
   </div>
+  <div class="archive-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h4 id="1-x3D-x3D-和-equals-比较的区别。"><a href="#1-x3D-x3D-和-equals-比较的区别。" class="headerlink" title="1.&#x3D;&#x3D; 和 equals 比较的区别。"></a>1.&#x3D;&#x3D; 和 equals 比较的区别。</h4><p>(1). “&#x3D;&#x3D;”是比较运算符；<br>“equals”是Object类中的方法。</p>
-<p>(2).”&#x3D;&#x3D;”可以比较两个基本数据类型的变量是否相等，比较的是基本数据类型的值是否相等；<br>也可以比较两个引用数据类型的变量是否相等，就是比较引用数据类型所指向的对象的地址是否相等。</p>
-<p>(3).”equals”不能比较两个基本数据类型的变量是否相等，但它可以比较两个引用数据类型的变量是否相等(<mark>默认情况下比较的是引用数据类型变量所指向的对象的地址是否相等</mark>);<br>“equals”方法被重写之后，比较的是引用数据类型变量所指向的内容是否相等。</p>
-<table><tr><td bgcolor="Darkorange">String类和Date类就属于"equals"方法被重写的情况。</td></tr></table>
-
-
-<h4 id="2-final关键字的作用。"><a href="#2-final关键字的作用。" class="headerlink" title="2.final关键字的作用。"></a>2.final关键字的作用。</h4><blockquote>
-<p>final可以用来修饰的结构：类、方法、变量。</p>
-</blockquote>
-<ol>
-<li><p>final关键字的特性：<br><mark>final有着独一无二的特性，就是只可以赋值一次，一旦赋值就无法改变其值。</mark></p>
-</li>
-<li><p>final关键字修饰一个类的时候：<br>用final修饰一个类的时候，表示这个类不能被继承 ，要注意的是被final修饰的类，它的成员方法也都会被隐式的指定为final方法</p>
-</li>
-<li><p>final关键字修饰一个方法的时候：<br>被final修饰的方法代表不能重写</p>
-</li>
-<li><p>final关键字修饰一个变量的时候：<br>被final修饰的变量必须要初始化，赋值后不能再重新赋值。<br>如果修饰的变量是基本数据类型，值不能改变<br>如果修饰的成员变量是引用数据类型，表示引用地址不能改变，但是引用所指向的对象的里面的内容还是可以改变的</p>
-</li>
-</ol>
-<h4 id="3-为什么重写equals-还要重写-hashcode？"><a href="#3-为什么重写equals-还要重写-hashcode？" class="headerlink" title="3.为什么重写equals 还要重写 hashcode？"></a>3.为什么重写equals 还要重写 hashcode？</h4><p><mark>注：集合是一种容器用来装数据的，类似数组。</mark><br>(1). Object 的 equals() 默认比较的是对象的内存地址，而hashCode() 也是对对象的内存地址进行hash，返回对象自己的哈希值。<br>(2).因为Hash 比 equals 方法的开销小，速度更快，所以在涉及到hashCode的容器（比如HashSet集合），判断自己是否持有该对象时，会先检查hashCode 是否相等，如果hashCode 不相等，就会直接认为不重复，并存入容器中，不会再调用equals 进行比较。<br>(3).如果hashCode 相等，则代表数组中已经存在对象，还需要通过equals 方法来检测这条链表上的元素是否有一样的，匹配一样，则不添加，否则需要在该数据的下方挂载该对象，形成链表，当链表个数达到8个及以上 且 数组大小满足64，则链表要变成红黑树形式。<br>因此，即使该对象已经存入HashSet 中，但是因为hashCode 不同，会被认为不是同一个对象，还会再次被存入，所以要重新hashCode，以保证：如果equals判断相等，那么hashCode 值也要相等。</p>
-<table><tr><td bgcolor="LightBlue">
-如果两个对象的equals方法返回true，它们的哈希值必须相同；反之，如果哈希值相同，对象的equals方法不一定相等。因此，为了保持一致性，当我们重写equals方法时，也需要同时重写hashCode方法，确保相等的对象具有相同的哈希值，避免在哈希表中出现错误的行为。</td></tr></table>
-
-<h4 id="4-为啥有时会出现4-0-3-6-x3D-0-40000001-这种现象？"><a href="#4-为啥有时会出现4-0-3-6-x3D-0-40000001-这种现象？" class="headerlink" title="4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？"></a>4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？</h4><p>因为数字在计算机中是以二进制的形式进行存储的，2进制的小数无法精确的表达10进制小数，计算机在计算10进制小数的过程中要先转换为2进制进行计算，这个过程中出现了误差。所以进行这样的计算应该使用BigDecimal类，才能准确地得到想要的数值。</p>
-<h4 id="5-介绍Java的集合类"><a href="#5-介绍Java的集合类" class="headerlink" title="5.介绍Java的集合类"></a>5.介绍Java的集合类</h4><p>Java集合框架分为Collection(单列集合)集合 和 Map(双列集合)集合。</p>
-<h5 id="Collection集合主要有List-和-Set-两大接口"><a href="#Collection集合主要有List-和-Set-两大接口" class="headerlink" title="Collection集合主要有List 和 Set 两大接口"></a>Collection集合主要有List 和 Set 两大接口</h5><blockquote>
-<p>List:有序、可重复、有索引</p>
-</blockquote>
-<ol>
-<li>ArrayList:基于数组实现，线程不安全[常用]</li>
-<li>Vector:基于数组实现，线程安全</li>
-<li>LinkedList:基于双链表实现，线程不安全</li>
-</ol>
-<blockquote>
-<p>Set:无序、不重复、无索引</p>
-</blockquote>
-<p><mark>哈希表&#x3D;数组+链表+红黑树</mark></p>
-<ol>
-<li>HashSet:哈希表结构<br>实现子类：LinkedHashSet:<mark>有序</mark>、不重复、无索引</li>
-<li>TreeSet:<mark>按大小默认升序排列</mark>、不重复、无索引</li>
-</ol>
-<h5 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h5><ol>
-<li>HashMap:哈希表结构、线程不安全<br>实现子类：LinedHashMap</li>
-<li>HashTable:哈希表结构，线程安全<br>实现子类：Properties</li>
-<li>TreepMap:红黑树结构</li>
-</ol>
-<h4 id="6-ArrayList-和-LinkedList-的区别。"><a href="#6-ArrayList-和-LinkedList-的区别。" class="headerlink" title="6.ArrayList 和 LinkedList 的区别。"></a>6.ArrayList 和 LinkedList 的区别。</h4><ol>
-<li>ArrayList的实现是基于数组，LinkedList的实现是基于双向链表。</li>
-<li>对于随机访问，ArrayList优于LinkedList。</li>
-<li>对于插入和删除操作，LinkedList优于ArrayList。</li>
-<li>LinkedList比ArrayList更占内存，因为LinkedList的节点除了存储数据，还存储了两个引用，一个指向前一个元素，一个指向后一个元素。</li>
-</ol>
-
-      </div>
-      <div class="post-tags-categories">
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>author:  </strong>QqLa</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>link:  </strong>
-    <a href="/2023/08/03/4/" target="_blank" title="经典面试题">http://example.com/2023/08/03/4/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>Copyright notice:   </strong>
-      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      reprint policy. If reproduced, please indicate source!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/08/13/5/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">在Idea中使用JUnit 5 单元测试</div>
-      </div>
-      
-      <!-- <div class="content">
-        若直接使用@Test报错，没有配置JUnit 包，则可以通过下面的方式利用idea下载。
-在java工程中新加一个类，在
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2023/06/25/3/" class="post-nav-link">
-      <div class="title">
-        Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">面向对象</div>
-      </div>
-      <!-- <div class="content">
-        面向对象的三大特征：封装、继承、多态类的五大成分：成员变量、构造器、方法、代码块、内部类
-面向对象
-把现实世界中的事物全
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+  <span class="title" id="archive-header-desc"></span>
+  <script>
+  function typedFn() {
+    const el = '#archive-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <div id="gitment-container"></div>
-
-    
+  typedFn();
+</script>
+  
   </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/'>
-          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>QqLa</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-        
-          
-        
-          
-            <a href="https://github.com/lahahah/lahahah.github.io"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-x3D-x3D-%E5%92%8C-equals-%E6%AF%94%E8%BE%83%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">1.&#x3D;&#x3D; 和 equals 比较的区别。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-final%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">2.final关键字的作用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99equals-%E8%BF%98%E8%A6%81%E9%87%8D%E5%86%99-hashcode%EF%BC%9F"><span class="toc-text">3.为什么重写equals 还要重写 hashcode？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%BA%E5%95%A5%E6%9C%89%E6%97%B6%E4%BC%9A%E5%87%BA%E7%8E%B04-0-3-6-x3D-0-40000001-%E8%BF%99%E7%A7%8D%E7%8E%B0%E8%B1%A1%EF%BC%9F"><span class="toc-text">4. 为啥有时会出现4.0 - 3.6 &#x3D; 0.40000001 这种现象？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BB%8B%E7%BB%8DJava%E7%9A%84%E9%9B%86%E5%90%88%E7%B1%BB"><span class="toc-text">5.介绍Java的集合类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Collection%E9%9B%86%E5%90%88%E4%B8%BB%E8%A6%81%E6%9C%89List-%E5%92%8C-Set-%E4%B8%A4%E5%A4%A7%E6%8E%A5%E5%8F%A3"><span class="toc-text">Collection集合主要有List 和 Set 两大接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Map%E9%9B%86%E5%90%88"><span class="toc-text">Map集合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-ArrayList-%E5%92%8C-LinkedList-%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%82"><span class="toc-text">6.ArrayList 和 LinkedList 的区别。</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
+  <div class="mask-box"></div>
 </div>
 
+<div class="archive-video">
+  <video class="full-video" autoplay loop muted>
+      <source style="width: 100%;height: 100vh;" src="/">
+  </video>
+  <div class="video-header-title">
+    archive
+  </div>
+  <div class="video-header-desc">
+  
+      <span class="title" id="archive-video-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#archive-video-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
       
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+<!-- hash算法 -->
 
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
+<div class="archive-main">
+  <section class="archive">
+    <div class="archive-content">
+      <ul class="post-archive">
         
-          <div class="aside-list-item">
+        
+          
             
+            <div class="year" data-aos="zoom-in-up">
+                <div class="bullet"></div>
+                <a href="/archives/2024">2024</a>
+            </div>
+          
+          <li class="post-item" data-aos="fade-left">
             
-            
-
             <div class="post-img-box">
               <a href="/2024/12/03/%E6%96%B0%E6%96%87%E7%AB%A0/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                
-                  <span class="post-date">12-03</span>
-                
+                <span class="post-date">12-03</span>
               </div>
               <a class="post-title" href="/2024/12/03/%E6%96%B0%E6%96%87%E7%AB%A0/">新开始</a>
             </div>
-          </div>
+          </li>
         
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/10/02/Vue2+Element%20UI%20%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A1%B5%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-e22aaad20d20634f506f57fff0fcbc17_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-e22aaad20d20634f506f57fff0fcbc17_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-02</span>
-                
-              </div>
-              <a class="post-title" href="/2023/10/02/Vue2+Element%20UI%20%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A1%B5%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">Vue2 + Element UI 实现分页搜索功能</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/10/01/Git%20%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-01</span>
-                
-              </div>
-              <a class="post-title" href="/2023/10/01/Git%20%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">Git 代码管理工具</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/09/30/vue%E4%B8%AD%E7%9A%84%E6%8F%92%E6%A7%BD/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">09-30</span>
-                
-              </div>
-              <a class="post-title" href="/2023/09/30/vue%E4%B8%AD%E7%9A%84%E6%8F%92%E6%A7%BD/">vue中的插槽</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/18/6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-18</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/18/6/">内部类</a>
-            </div>
-          </div>
-        
-      </div>
+      </ul>
     </div>
   </section>
-
+  <div class="w-70">
     
   </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
 </div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
-  
-</script>
-
 
       </main>
     </div>
